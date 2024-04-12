@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+function ordenarValores(valores) {
+    return valores.sort(function(a, b) {
+        return a - b;
+    });
+}
+
+        function main() {
+    let valores = [];
+    let contador = 1;
+        
+
+    function lerValor() {
+        let valor = prompt(`Digite o ${contador}º valor:`);
+        valor = parseFloat(valor);
+        if (!isNaN(valor)) {
+            valores.push(valor);
+            contador++;
+            if (contador <= 5) {
+                lerValor(); 
+            } else {
+                
+                alert(('Valores em ordem crescente:', ordenarValores(valores)));
+            }
+        } else {
+            alert('Por favor, digite um número válido.');
+            lerValor(); 
+        }
+    }
+
+    lerValor(); 
+}
+
+
+main();
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
